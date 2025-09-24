@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Products.Domain.Options
 {
-    internal class ConnectionStringOption
+    public class ConnectionStringOption
     {
+        public const string Key = "ConnectionStrings";
+        public string PostgresConnection { get; set; } = default!;
     }
 }
