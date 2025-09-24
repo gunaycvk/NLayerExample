@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
-namespace Products.Application.Contracts.Persistence
+public interface IGenericRepository<T> where T : class
 {
-    internal class IGenericRepository
-    {
-    }
+    IQueryable<T> GetAll();
+    IQueryable<T> Where(Expression<Func<T, bool>> predicate);
+
+    ValueTask<T?> GetByIdAsync(int id);
+    ValueTask AddAsync(T entity);
+    void Update(T entity);
+    void Delete(T entity);
 }
