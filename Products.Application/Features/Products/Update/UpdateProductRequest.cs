@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Products.Application.Features.Products.Update
 {
-    internal class UpdateProductRequest
-    {
-    }
+    public record UpdateProductRequest(int Id, string Name, decimal Price, int Stock);
+  
 }

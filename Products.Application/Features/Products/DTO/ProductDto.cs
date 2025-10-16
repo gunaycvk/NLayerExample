@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Products.Application.Features.Products.DTO
 {
-    internal class ProductDto
-    {
-    }
+    public record ProductDto(int Id, string Name, decimal Price,int Stock);
+ 
 }

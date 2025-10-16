@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Products.Persistence.Products
 {
-    internal class ProductRepository(AppDbContext context) : GenericRepository<Product>, IProductRepositry
+    internal class ProductRepository(AppDbContext context) : GenericRepository<Product>(context), IProductRepositry
     {
         public Task<List<Product>> GetTopPriceProductsAsync(int count)
         {

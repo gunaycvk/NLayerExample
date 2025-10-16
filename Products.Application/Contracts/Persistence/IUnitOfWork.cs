@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Products.Application.Contracts.Persistence
 {
-    internal class IUnitOfWork
+    public interface IUnitOfWork
     {
+        Task<int> SaveChangesAsync();
     }
 }

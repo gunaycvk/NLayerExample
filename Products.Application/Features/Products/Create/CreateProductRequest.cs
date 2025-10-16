@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Products.Application.Features.Products.Create
 {
-    internal class CreateProductRequest
-    {
-    }
+    public record CreateProductRequest(string Name, decimal Price, int Stock);
+    
 }

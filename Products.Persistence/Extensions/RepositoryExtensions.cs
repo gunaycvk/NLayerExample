@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Products.Domain.Options;
 using Microsoft.EntityFrameworkCore;
+using Products.Application.Contracts.Persistence;
+using Products.Persistence.Products;
 
 namespace Products.Persistence.Extensions
 {
@@ -21,6 +23,10 @@ namespace Products.Persistence.Extensions
                     });
 
             });
+
+            services.AddScoped<IProductRepositry, ProductRepository>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
 

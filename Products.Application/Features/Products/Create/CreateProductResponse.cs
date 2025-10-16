@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Products.Application.Features.Products.Create
 {
-    internal class CreateProductResponse
-    {
-    }
+   public record CreateProductResponse(int id );
+    
 }
